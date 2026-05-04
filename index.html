@@ -4,780 +4,981 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>I Attract Miracles — The Speculative Science Podcast</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <meta name="description" content="I Attract Miracles is the speculative science podcast hosted by Ivo Betke. Each episode bridges the lab breakthrough and the scaled future through immersive storytelling."/>
+
+  <!-- Self-hosted brand fonts -->
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @font-face {
+      font-family: "Cinzel";
+      src: url("fonts/Cinzel-VariableFont_wght.ttf") format("truetype-variations");
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Pinyon Script";
+      src: url("fonts/PinyonScript-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Playfair Display";
+      src: url("fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype-variations");
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Playfair Display";
+      src: url("fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype-variations");
+      font-weight: 400 900;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "IBM Plex Sans";
+      src: url("fonts/IBMPlexSans-VariableFont_wdth_wght.ttf") format("truetype-variations");
+      font-weight: 100 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "IBM Plex Sans";
+      src: url("fonts/IBMPlexSans-Italic-VariableFont_wdth_wght.ttf") format("truetype-variations");
+      font-weight: 100 700;
+      font-style: italic;
+      font-display: swap;
+    }
+  </style>
 
+  <!-- IBM Plex Mono from Google Fonts (no self-hosted file available) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────────────────────── */
     :root {
-      --black: #080810;
-      --deep: #0d0d1a;
-      --ink: #11111f;
-      --gold: #c9a84c;
-      --gold-dim: #7a6128;
-      --cream: #f0e8d8;
-      --cream-dim: #a09080;
-      --white: #faf6ef;
-      --glow: rgba(201,168,76,0.18);
+      --iam-anthracite:     #1A1D1F;
+      --iam-deep-navy:      #093472;
+      --iam-vivid-blue:     #0b61ba;
+      --iam-light:          #e4e1d2;
+      --iam-light-50:       #efece0;
+      --iam-light-100:      #e4e1d2;
+      --iam-light-200:      #d6d2bf;
+      --iam-light-300:      #b8b29a;
+      --iam-navy-100:       #d2dbeb;
+      --iam-navy-300:       #6a82b3;
+      --iam-anthracite-soft:#2A2D2F;
+
+      --iam-bg:             var(--iam-light-100);
+      --iam-bg-elevated:    var(--iam-light-50);
+      --iam-fg-1:           var(--iam-deep-navy);
+      --iam-fg-2:           var(--iam-anthracite);
+      --iam-fg-3:           #6a6a5a;
+      --iam-fg-on-dark:     var(--iam-light-100);
+      --iam-border:         #c5bea3;
+      --iam-border-strong:  var(--iam-deep-navy);
+      --iam-link:           var(--iam-vivid-blue);
+      --iam-link-hover:     var(--iam-deep-navy);
+
+      --ff-display:  "Cinzel", "Times New Roman", Georgia, serif;
+      --ff-editorial:"Playfair Display", "Times New Roman", Georgia, serif;
+      --ff-script:   "Pinyon Script", cursive, serif;
+      --ff-body:     "IBM Plex Sans", -apple-system, system-ui, sans-serif;
+      --ff-mono:     "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+      --sp-1:  4px;  --sp-2:  8px;  --sp-3: 12px;
+      --sp-4: 16px;  --sp-5: 24px;  --sp-6: 32px;
+      --sp-7: 48px;  --sp-8: 64px;  --sp-9: 96px;
+
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --dur-base: 220ms;
     }
 
+    /* ── RESET ──────────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
-      background: var(--black);
-      color: var(--cream);
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      background: var(--iam-bg);
+      color: var(--iam-fg-1);
+      font-family: var(--ff-body);
+      font-size: 16px;
+      line-height: 1.5;
       overflow-x: hidden;
-      cursor: default;
     }
+    a { color: var(--iam-link); }
+    img { display: block; max-width: 100%; }
 
-    /* ── NOISE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      opacity: 0.035;
-      pointer-events: none;
-      z-index: 999;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 6rem 2rem 4rem;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 70% 50% at 50% 30%, rgba(201,168,76,0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(80,60,180,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 60% at 80% 10%, rgba(40,120,200,0.04) 0%, transparent 60%);
-    }
-
-    /* Orbiting particles */
-    .particles {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-    }
-    .particle {
-      position: absolute;
-      border-radius: 50%;
-      background: var(--gold);
-      opacity: 0;
-      animation: float-up var(--dur, 12s) var(--delay, 0s) infinite ease-in-out;
-    }
-    @keyframes float-up {
-      0%   { opacity: 0; transform: translateY(0) scale(0.5); }
-      20%  { opacity: var(--op, 0.4); }
-      80%  { opacity: var(--op, 0.4); }
-      100% { opacity: 0; transform: translateY(-120px) scale(1.2); }
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid rgba(201,168,76,0.1);
-      animation: pulse-orb 8s ease-in-out infinite;
-    }
-    @keyframes pulse-orb {
-      0%, 100% { transform: scale(1); opacity: 0.15; }
-      50%       { transform: scale(1.05); opacity: 0.3; }
-    }
-
-    .tagline-pre {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fade-in 1s 0.3s forwards;
-    }
-
-    h1 {
-      font-size: clamp(3.5rem, 10vw, 8rem);
-      font-weight: 300;
-      line-height: 0.95;
-      letter-spacing: -0.01em;
-      color: var(--white);
-      opacity: 0;
-      animation: fade-up 1s 0.5s forwards;
-    }
-    h1 em {
+    /* ── WORDMARK ───────────────────────────────────────────────────────── */
+    .wordmark { display: inline-block; text-decoration: none; line-height: 1; }
+    .wordmark__script {
+      display: block;
+      font-family: var(--ff-script);
       font-style: italic;
-      color: var(--gold);
-      font-weight: 300;
+      font-size: 22px;
+      color: var(--iam-vivid-blue);
+      margin-bottom: -2px;
+      letter-spacing: 0;
     }
-
-    .hero-subtitle {
-      margin-top: 1.8rem;
-      font-size: clamp(1rem, 2.5vw, 1.35rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--cream-dim);
-      max-width: 520px;
-      line-height: 1.6;
-      opacity: 0;
-      animation: fade-in 1s 0.9s forwards;
-    }
-
-    .hero-meta {
-      margin-top: 2.5rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      color: var(--gold-dim);
+    .wordmark__serif {
+      display: block;
+      font-family: var(--ff-display);
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--iam-deep-navy);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      opacity: 0;
-      animation: fade-in 1s 1.2s forwards;
+    }
+    .wordmark--light .wordmark__script,
+    .wordmark--light .wordmark__serif { color: var(--iam-light-100); }
+
+    /* ── EYEBROW ────────────────────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--iam-fg-3);
     }
 
-    .listen-links {
-      margin-top: 3rem;
+    /* ── HEADER ─────────────────────────────────────────────────────────── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--iam-bg);
+      border-bottom: 1px solid var(--iam-border);
+      padding: 20px 32px;
       display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      opacity: 0;
-      animation: fade-in 1s 1.5s forwards;
-    }
-
-    .listen-btn {
-      display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.6rem 1.4rem;
-      border: 1px solid var(--gold-dim);
-      color: var(--cream-dim);
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .site-nav {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .site-nav a {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--iam-deep-navy);
       text-decoration: none;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
+      transition: color var(--dur-base) var(--ease-out);
+    }
+    .site-nav a:hover { color: var(--iam-vivid-blue); }
+    .btn-listen {
+      font-family: var(--ff-body);
+      font-size: 13px;
+      font-weight: 500;
+      background: var(--iam-deep-navy);
+      color: var(--iam-light-100);
+      padding: 11px 18px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: background var(--dur-base) var(--ease-out);
+      white-space: nowrap;
+    }
+    .btn-listen:hover { background: var(--iam-anthracite); color: var(--iam-light-100); }
+
+    /* ── HERO ───────────────────────────────────────────────────────────── */
+    .hero { padding: 64px 32px; max-width: 1280px; margin: 0 auto; }
+    .hero__frame {
+      border: 1px solid var(--iam-deep-navy);
+      padding: 56px 64px;
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 0.9fr;
+      gap: 56px;
+      align-items: flex-start;
+    }
+    .hero__lockup-pre {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      border-radius: 2px;
-      transition: all 0.3s;
-      background: transparent;
+      color: var(--iam-fg-3);
+      margin-bottom: 28px;
     }
-    .listen-btn:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-      background: rgba(201,168,76,0.05);
-      box-shadow: 0 0 20px rgba(201,168,76,0.1);
+    .hero__script {
+      font-family: var(--ff-script);
+      font-style: italic;
+      font-size: 80px;
+      line-height: 0.95;
+      color: var(--iam-vivid-blue);
+      margin-bottom: -8px;
     }
-
-    .scroll-hint {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-      opacity: 0;
-      animation: fade-in 1s 2s forwards;
-    }
-    .scroll-hint span {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      color: var(--gold-dim);
+    .hero__display {
+      font-family: var(--ff-display);
+      font-weight: 800;
+      font-size: 96px;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      color: var(--iam-deep-navy);
       text-transform: uppercase;
     }
-    .scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--gold-dim), transparent);
-      animation: scroll-pulse 2s ease-in-out infinite;
+    .hero__col-label {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--iam-fg-3);
+      margin-bottom: 24px;
     }
-    @keyframes scroll-pulse {
-      0%, 100% { opacity: 0.4; transform: scaleY(1); }
-      50%       { opacity: 1; transform: scaleY(1.1); }
+    .hero__act {
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--iam-border);
+    }
+    .hero__act:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+    .hero__act-name {
+      font-family: var(--ff-editorial);
+      font-weight: 600;
+      font-size: 19px;
+      color: var(--iam-deep-navy);
+      margin-bottom: 2px;
+    }
+    .hero__act-desc {
+      font-family: var(--ff-editorial);
+      font-style: italic;
+      font-size: 13px;
+      color: var(--iam-deep-navy);
+      opacity: 0.7;
+    }
+    .hero__season-label { margin-bottom: 16px; }
+    .hero__season-script {
+      font-family: var(--ff-editorial);
+      font-style: italic;
+      font-size: 32px;
+      line-height: 1.05;
+      color: var(--iam-deep-navy);
+      margin-bottom: 4px;
+    }
+    .hero__season-display {
+      font-family: var(--ff-display);
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      color: var(--iam-deep-navy);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hero__season-tagline {
+      font-family: var(--ff-editorial);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--iam-deep-navy);
+      opacity: 0.75;
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--iam-border);
+    }
+    .hero__season-meta {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--iam-fg-3);
+      margin-bottom: 6px;
     }
 
-    /* ── DIVIDER ── */
-    .divider {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
-      opacity: 0.4;
-      margin: 0;
+    /* ── FEATURED FILM (cinematic) ──────────────────────────────────────── */
+    .featured {
+      background: var(--iam-anthracite);
+      color: var(--iam-light-100);
+      padding: 88px 32px;
     }
-
-    /* ── SECTIONS ── */
-    section {
-      padding: 6rem 2rem;
-      max-width: 1000px;
+    .featured__inner {
+      max-width: 1120px;
       margin: 0 auto;
-    }
-
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.35em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 3rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(to right, var(--gold-dim), transparent);
-      opacity: 0.4;
-    }
-
-    /* ── CONCEPT ── */
-    .concept-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
+      gap: 64px;
+      align-items: center;
     }
-    @media (max-width: 680px) {
-      .concept-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    }
-
-    .concept-quote {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-style: italic;
-      font-weight: 300;
-      line-height: 1.5;
-      color: var(--white);
-    }
-    .concept-quote em { color: var(--gold); font-style: normal; }
-
-    .concept-body {
-      font-size: 1.05rem;
-      font-weight: 300;
-      line-height: 1.9;
-      color: var(--cream-dim);
-    }
-    .concept-body p + p { margin-top: 1.2rem; }
-
-    /* ── EPISODES ── */
-    .episodes-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .episode-card {
-      display: grid;
-      grid-template-columns: 5rem 1fr;
-      gap: 2rem;
-      padding: 2.5rem 0;
-      border-bottom: 1px solid rgba(201,168,76,0.1);
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.3s;
+    .featured__image-wrap {
+      aspect-ratio: 1/1;
+      background: #093472;
       position: relative;
+      overflow: hidden;
+      border: 1px solid #1a4288;
     }
-    .episode-card::before {
-      content: '';
+    .featured__image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .featured__image-caption {
       position: absolute;
-      left: -2rem;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: var(--gold);
-      transform: scaleY(0);
-      transition: transform 0.3s;
-    }
-    .episode-card:hover::before { transform: scaleY(1); }
-    .episode-card:hover { padding-left: 0.5rem; }
-    .episode-card:first-child { border-top: 1px solid rgba(201,168,76,0.1); }
-
-    .ep-num {
-      font-family: 'DM Mono', monospace;
-      font-size: 2rem;
-      font-weight: 300;
-      color: var(--gold-dim);
-      line-height: 1;
-      padding-top: 0.2rem;
-      transition: color 0.3s;
-    }
-    .episode-card:hover .ep-num { color: var(--gold); }
-
-    .ep-meta {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: rgba(228,225,210,0.7);
       text-transform: uppercase;
-      color: var(--gold-dim);
-      margin-bottom: 0.5rem;
     }
-
-    .ep-title {
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    .featured__eyebrow {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: #9eb4d8;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .featured__title {
+      font-family: var(--ff-editorial);
+      font-style: italic;
       font-weight: 400;
-      color: var(--white);
-      line-height: 1.3;
-      margin-bottom: 0.6rem;
+      font-size: 56px;
+      line-height: 1.05;
+      margin: 0;
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+      color: var(--iam-light-100);
     }
-
-    .ep-desc {
-      font-size: 0.95rem;
-      font-style: italic;
-      font-weight: 300;
-      color: var(--cream-dim);
-      line-height: 1.7;
+    .featured__desc {
+      font-family: var(--ff-body);
+      font-size: 17px;
+      line-height: 1.65;
+      color: #c8c4b3;
+      margin-top: 24px;
+      max-width: 480px;
     }
-
-    .ep-tag {
-      display: inline-block;
-      margin-top: 1rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
+    .featured__actions {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-top: 36px;
+    }
+    .btn-play {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--iam-vivid-blue);
+      color: var(--iam-light-100);
+      font-family: var(--ff-body);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 14px 22px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: background var(--dur-base) var(--ease-out);
+    }
+    .btn-play:hover { background: #0a52a0; color: var(--iam-light-100); }
+    .btn-shownotes {
+      color: var(--iam-light-100);
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      border: 1px solid var(--gold-dim);
-      color: var(--gold-dim);
-      padding: 0.2rem 0.6rem;
-      border-radius: 2px;
-      margin-right: 0.4rem;
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
+    .btn-shownotes:hover { color: var(--iam-vivid-blue); }
 
-    .coming-soon {
-      text-align: center;
-      padding: 4rem 2rem;
-      border: 1px solid rgba(201,168,76,0.15);
-      border-radius: 4px;
-      background: rgba(201,168,76,0.02);
-    }
-    .coming-soon .cs-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-    .coming-soon p {
-      font-size: 1.2rem;
+    /* ── ACTS EXPLAINER ─────────────────────────────────────────────────── */
+    .acts { padding: 96px 32px; max-width: 1120px; margin: 0 auto; }
+    .acts__heading {
+      font-family: var(--ff-editorial);
       font-style: italic;
-      color: var(--cream-dim);
+      font-weight: 400;
+      font-size: 56px;
+      line-height: 1.05;
+      margin: 0 0 56px;
+      letter-spacing: -0.01em;
+      max-width: 720px;
+      text-wrap: balance;
+      color: var(--iam-deep-navy);
     }
-
-    /* ── FORMAT ── */
-    .format-grid {
+    .acts__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(201,168,76,0.1);
-      border: 1px solid rgba(201,168,76,0.1);
+      border: 1px solid var(--iam-deep-navy);
     }
-    @media (max-width: 680px) {
-      .format-grid { grid-template-columns: 1fr; }
+    .acts__cell {
+      padding: 32px;
+      min-height: 240px;
+      background: var(--iam-bg-elevated);
     }
-
-    .format-block {
-      background: var(--black);
-      padding: 2.5rem;
-      transition: background 0.3s;
+    .acts__cell + .acts__cell { border-left: 1px solid var(--iam-deep-navy); }
+    .acts__cell-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 22px;
     }
-    .format-block:hover { background: rgba(201,168,76,0.03); }
-
-    .fmt-time {
-      font-family: 'DM Mono', monospace;
-      font-size: 2.5rem;
-      font-weight: 300;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 1rem;
+    .acts__cell-name {
+      font-family: var(--ff-display);
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 0.12em;
+      color: var(--iam-deep-navy);
+      text-transform: uppercase;
     }
-
-    .fmt-title {
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 0.8rem;
+    .acts__cell-time {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      color: var(--iam-vivid-blue);
+      letter-spacing: 0.1em;
     }
-
-    .fmt-desc {
-      font-size: 0.9rem;
+    .acts__cell-desc {
+      font-family: var(--ff-editorial);
       font-style: italic;
-      font-weight: 300;
-      color: var(--cream-dim);
-      line-height: 1.7;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--iam-deep-navy);
     }
 
-    /* ── HOSTS ── */
-    .host-grid {
+    /* ── EPISODES ───────────────────────────────────────────────────────── */
+    .episodes { padding: 96px 32px; max-width: 1120px; margin: 0 auto; }
+    .episodes__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 32px;
+    }
+    .episodes__heading {
+      font-family: var(--ff-display);
+      font-weight: 400;
+      font-size: 42px;
+      line-height: 1.1;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--iam-deep-navy);
+    }
+    .episodes__count {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--iam-fg-3);
+      text-transform: uppercase;
+    }
+    .episode-row {
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      gap: 32px;
+      align-items: flex-start;
+      padding: 28px 0;
+      border-top: 1px solid var(--iam-border);
+      text-decoration: none;
+      color: var(--iam-deep-navy);
+      transition: opacity var(--dur-base) var(--ease-out);
+    }
+    .episode-row:last-child { border-bottom: 1px solid var(--iam-border); }
+    .episode-row:hover { opacity: 0.75; }
+    .episode-row__num {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--iam-fg-3);
+    }
+    .episode-row__act {
+      font-family: var(--ff-display);
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      color: var(--iam-vivid-blue);
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+    .episode-row__title {
+      font-family: var(--ff-editorial);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 1.15;
+      margin: 0;
+      letter-spacing: -0.005em;
+      color: var(--iam-deep-navy);
+    }
+    .episode-row__desc {
+      font-family: var(--ff-body);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--iam-anthracite);
+      margin: 10px 0 0;
+      max-width: 640px;
+    }
+    .episode-row__meta {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: var(--iam-fg-3);
+      text-align: right;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+    .episode-row__meta span { display: block; margin-top: 6px; }
+
+    /* ── COMING SOON ────────────────────────────────────────────────────── */
+    .coming-soon {
+      padding: 48px 32px;
+      border: 1px solid var(--iam-border);
+      text-align: center;
+      margin-top: 0;
+      border-top: 0;
+    }
+    .coming-soon__label {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--iam-fg-3);
+      margin-bottom: 12px;
+    }
+    .coming-soon__text {
+      font-family: var(--ff-editorial);
+      font-style: italic;
+      font-size: 20px;
+      color: var(--iam-deep-navy);
+    }
+
+    /* ── TEAM ───────────────────────────────────────────────────────────── */
+    .team { padding: 96px 32px; max-width: 1120px; margin: 0 auto; }
+    .team__grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 48px;
+      margin-top: 40px;
     }
-    @media (max-width: 580px) {
-      .host-grid { grid-template-columns: 1fr; }
-    }
-
-    .host-card {
-      border-top: 1px solid rgba(201,168,76,0.2);
-      padding-top: 2rem;
-    }
-
-    .host-role {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.25em;
-      color: var(--gold);
+    .team__card { border-top: 1px solid var(--iam-deep-navy); padding-top: 24px; }
+    .team__role {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 0.6rem;
+      color: var(--iam-fg-3);
+      margin-bottom: 10px;
+    }
+    .team__name {
+      font-family: var(--ff-editorial);
+      font-weight: 700;
+      font-size: 28px;
+      color: var(--iam-deep-navy);
+      margin-bottom: 14px;
+    }
+    .team__bio {
+      font-family: var(--ff-body);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--iam-anthracite);
     }
 
-    .host-name {
-      font-size: 1.6rem;
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 1rem;
+    /* ── NEWSLETTER / DISPATCH ──────────────────────────────────────────── */
+    .dispatch {
+      background: var(--iam-bg-elevated);
+      padding: 88px 32px;
+      border-top: 1px solid var(--iam-border);
+      border-bottom: 1px solid var(--iam-border);
     }
-
-    .host-bio {
-      font-size: 0.95rem;
-      font-style: italic;
-      font-weight: 300;
-      color: var(--cream-dim);
-      line-height: 1.8;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid rgba(201,168,76,0.15);
-      padding: 4rem 2rem 3rem;
+    .dispatch__inner {
+      max-width: 720px;
+      margin: 0 auto;
       text-align: center;
     }
-
-    .footer-inner {
-      max-width: 700px;
-      margin: 0 auto;
+    .dispatch__eyebrow {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--iam-vivid-blue);
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
-
-    .footer-logo {
-      font-size: 1.5rem;
+    .dispatch__heading {
+      font-family: var(--ff-editorial);
       font-style: italic;
-      font-weight: 300;
-      color: var(--gold);
-      margin-bottom: 2.5rem;
-      letter-spacing: 0.05em;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 1.05;
+      margin: 0 0 16px;
+      text-wrap: balance;
+      color: var(--iam-deep-navy);
     }
-
-    .social-links {
+    .dispatch__heading strong {
+      font-weight: 800;
+      font-style: normal;
+      letter-spacing: 0.04em;
+    }
+    .dispatch__body {
+      font-family: var(--ff-body);
+      font-size: 16px;
+      color: var(--iam-anthracite);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+    }
+    .dispatch__form {
       display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
+      gap: 0;
+      max-width: 480px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--iam-deep-navy);
     }
+    .dispatch__input {
+      flex: 1;
+      border: 0;
+      background: transparent;
+      padding: 14px 0;
+      font-family: var(--ff-body);
+      font-size: 16px;
+      outline: none;
+      color: var(--iam-deep-navy);
+    }
+    .dispatch__input::placeholder { color: var(--iam-fg-3); }
+    .dispatch__submit {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--iam-vivid-blue);
+      transition: color var(--dur-base) var(--ease-out);
+      padding: 0;
+    }
+    .dispatch__submit:hover { color: var(--iam-deep-navy); }
 
-    .social-link {
+    /* ── FOOTER ─────────────────────────────────────────────────────────── */
+    .site-footer {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .site-footer__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-footer__links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .site-footer__links a {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--iam-fg-3);
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      text-decoration: none;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--cream-dim);
-      transition: color 0.3s;
-      padding: 0.4rem 0;
-      border-bottom: 1px solid transparent;
+      gap: 6px;
+      transition: color var(--dur-base) var(--ease-out);
     }
-    .social-link:hover {
-      color: var(--gold);
-      border-bottom-color: var(--gold-dim);
+    .site-footer__links a:hover { color: var(--iam-deep-navy); }
+    .site-footer__legal {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--iam-fg-3);
+      border-top: 1px solid var(--iam-border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
     }
+    .site-footer__legal a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--iam-border); }
+    .site-footer__legal a:hover { color: var(--iam-deep-navy); }
+    .site-footer__legal-links { display: flex; gap: 16px; }
 
-    .social-icon {
-      width: 16px;
-      height: 16px;
-      fill: currentColor;
-    }
+    /* ── SOCIAL ICON ────────────────────────────────────────────────────── */
+    .social-icon { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
 
-    .footer-quote {
-      font-size: 0.85rem;
-      font-style: italic;
-      color: var(--gold-dim);
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
-    }
+    /* ── SECTION DIVIDER ────────────────────────────────────────────────── */
+    .hairline { border: 0; border-top: 1px solid var(--iam-border); }
 
-    .footer-legal {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.1em;
-      color: rgba(160,144,128,0.4);
-      line-height: 2;
-    }
-    .footer-legal a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(160,144,128,0.2);
-      transition: color 0.3s;
-    }
-    .footer-legal a:hover { color: var(--cream-dim); }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fade-in {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-    @keyframes fade-up {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
+    /* ── SCROLL REVEAL ──────────────────────────────────────────────────── */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transform: translateY(20px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero__frame { padding: 32px 28px; }
+      .hero__grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero__script { font-size: 56px; }
+      .hero__display { font-size: 64px; }
+      .featured__inner { grid-template-columns: 1fr; gap: 40px; }
+      .featured__title { font-size: 36px; }
+      .acts__grid { grid-template-columns: 1fr; }
+      .acts__cell + .acts__cell { border-left: 0; border-top: 1px solid var(--iam-deep-navy); }
+      .episode-row { grid-template-columns: 80px 1fr; }
+      .episode-row__meta { display: none; }
+      .team__grid { grid-template-columns: 1fr; gap: 32px; }
+      .site-nav { display: none; }
+      .site-footer__top { flex-direction: column; align-items: flex-start; gap: 20px; }
     }
 
-    /* ── CURSOR GLOW ── */
-    .cursor-glow {
-      pointer-events: none;
-      position: fixed;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      z-index: 998;
-      transition: left 0.1s, top 0.1s;
+    @media (max-width: 600px) {
+      .hero { padding: 32px 20px; }
+      .acts { padding: 64px 20px; }
+      .episodes { padding: 64px 20px; }
+      .dispatch { padding: 64px 20px; }
+      .site-footer { padding: 28px 20px; }
+      .featured { padding: 64px 20px; }
+      .team { padding: 64px 20px; }
+      .dispatch__heading { font-size: 36px; }
     }
   </style>
 </head>
 <body>
 
-<div class="cursor-glow" id="cursorGlow"></div>
+<!-- ── HEADER ──────────────────────────────────────────────────────────── -->
+<header class="site-header">
+  <a href="/" class="wordmark" aria-label="I Attract Miracles — Home">
+    <span class="wordmark__script">I Attract</span>
+    <span class="wordmark__serif">Miracles</span>
+  </a>
+  <nav aria-label="Primary navigation">
+    <ul class="site-nav">
+      <li><a href="#episodes">Episodes</a></li>
+      <li><a href="#acts">The 40-Min Architecture</a></li>
+      <li><a href="#dispatch">The Dispatch</a></li>
+      <li><a href="#team">About</a></li>
+    </ul>
+  </nav>
+  <a href="https://www.youtube.com/@iattractmiracles_com" target="_blank" rel="noopener" class="btn-listen">Listen now</a>
+</header>
 
-<!-- ── HERO ── -->
-<section class="hero" style="max-width:100%; padding-left:2rem; padding-right:2rem;">
-  <div class="hero-bg"></div>
+<!-- ── HERO ────────────────────────────────────────────────────────────── -->
+<section class="hero" aria-label="Brand hero">
+  <div class="hero__frame">
+    <div class="hero__grid">
 
-  <div class="particles" id="particles"></div>
-
-  <!-- Orbs -->
-  <div class="orb" style="width:500px;height:500px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
-  <div class="orb" style="width:280px;height:280px;top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:-3s;border-color:rgba(201,168,76,0.06);"></div>
-
-  <p class="tagline-pre">The Speculative Science Podcast</p>
-
-  <h1>I <em>Attract</em><br>Miracles</h1>
-
-  <p class="hero-subtitle">
-    We sit down with the architects of the next decade—scientists, founders, and inventors building "impossible" technology.
-  </p>
-
-  <p class="hero-meta">Hosted by Ivo Betke &nbsp;·&nbsp; Weekly &nbsp;·&nbsp; 40 Minutes</p>
-
-  <div class="listen-links">
-    <a href="https://www.youtube.com/@iattractmiracles_com" target="_blank" class="listen-btn">
-      <svg class="social-icon" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.6 5.8a3 3 0 0 0 2.1 2.1C4.5 20.5 12 20.5 12 20.5s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
-      YouTube
-    </a>
-    <a href="https://open.spotify.com/show/iattractmiracles" target="_blank" class="listen-btn">
-      <svg class="social-icon" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-      Spotify
-    </a>
-    <a href="https://podcasts.apple.com/podcast/i-attract-miracles" target="_blank" class="listen-btn">
-      <svg class="social-icon" viewBox="0 0 24 24"><path d="M12.002 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm.003 4.38c2.07 0 3.82.6 5.07 1.77 1.05.99 1.68 2.31 1.68 3.69 0 2.49-1.44 4.44-3.69 5.31.09.36.18.72.24 1.11.09.51.12 1.02.12 1.56 0 .36-.03.69-.06 1.02-.06.57-.51.99-1.08.99-.3 0-.57-.12-.78-.3-.18-.18-.3-.42-.3-.69v-.06c.03-.24.06-.51.06-.78 0-.36-.03-.72-.09-1.08-.09-.51-.24-1.02-.45-1.5a5.73 5.73 0 0 1-1.71.27c-3.12 0-5.55-2.46-5.55-5.55 0-3.12 2.43-5.55 5.55-5.55zm0 1.68c-2.19 0-3.87 1.68-3.87 3.87s1.68 3.87 3.87 3.87 3.87-1.68 3.87-3.87-1.68-3.87-3.87-3.87zm0 1.53c1.29 0 2.34 1.05 2.34 2.34S13.29 12.27 12 12.27s-2.34-1.05-2.34-2.34S10.71 7.59 12.003 7.59z"/></svg>
-      Apple Podcasts
-    </a>
-  </div>
-
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── CONCEPT ── -->
-<section class="reveal">
-  <p class="section-label">The Miracle Gap</p>
-  <div class="concept-grid">
-    <div class="concept-quote">
-      We live between the <em>lab breakthrough</em> and the moment it changes the world.
-    </div>
-    <div class="concept-body">
-      <p>IAM bridges that gap. Each episode, we sit down with scientists and founders building "impossible" technology—and we don't just talk about the <em>how</em>.</p>
-      <p>We send a dispatch from the future. Through a guided speculation, our guests describe a day in the world they're building — 5, 10, 15 years from now.</p>
-      <p>"Any sufficiently advanced technology is indistinguishable from magic." — Arthur C. Clarke</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── EPISODES ── -->
-<section class="reveal">
-  <p class="section-label">Recent Episodes</p>
-
-  <div class="episodes-list">
-
-    <a href="#" class="episode-card">
-      <div class="ep-num">01</div>
+      <!-- Wordmark lockup -->
       <div>
-        <p class="ep-meta">Neural Interfaces · Coming 2026</p>
-        <h2 class="ep-title">Carolina Aguilar — Neural Sovereignty</h2>
-        <p class="ep-desc">CEO of INBRAIN Neuroelectronics. Graphene-based brain-computer interfaces that read and write neural signals—and a 2040 where chronic pain is a dial you turn down with a thought.</p>
-        <span class="ep-tag">Brain-Computer Interface</span>
-        <span class="ep-tag">Graphene</span>
-        <span class="ep-tag">Neuroelectronics</span>
+        <p class="hero__lockup-pre">The Speculative Science Podcast</p>
+        <div class="hero__script" aria-hidden="true">I Attract</div>
+        <div class="hero__display" aria-label="Miracles">MIRACLES</div>
       </div>
-    </a>
 
-    <a href="#" class="episode-card">
-      <div class="ep-num">02</div>
+      <!-- Format column -->
       <div>
-        <p class="ep-meta">Wearable Robotics · Coming 2026</p>
-        <h2 class="ep-title">Robert Riener — The End of Disability</h2>
-        <p class="ep-desc">Founder of MyoSwiss, ETH Zurich. Textile-based robotic muscles that slip under your clothes—and a 2035 where the word "disability" has been re-engineered out of existence.</p>
-        <span class="ep-tag">Wearable Robotics</span>
-        <span class="ep-tag">Exoskeleton</span>
-        <span class="ep-tag">Biomechanics</span>
+        <p class="hero__col-label">Format</p>
+        <div class="hero__act">
+          <div class="hero__act-name">The Origin</div>
+          <div class="hero__act-desc">The inciting incident behind the science</div>
+        </div>
+        <div class="hero__act">
+          <div class="hero__act-name">The Mechanism</div>
+          <div class="hero__act-desc">How the breakthrough actually works</div>
+        </div>
+        <div class="hero__act">
+          <div class="hero__act-name">The Dispatch</div>
+          <div class="hero__act-desc">A guided speculation from the future</div>
+        </div>
       </div>
+
+      <!-- Season column -->
+      <div>
+        <p class="hero__col-label hero__season-label">Season One</p>
+        <div class="hero__season-script">The Sovereign</div>
+        <div class="hero__season-display">Stack</div>
+        <div class="hero__season-tagline">Trust and coordination at civilizational scale.</div>
+        <p class="hero__season-meta">Coming 2026</p>
+        <p class="hero__season-meta">iattractmiracles.com</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED FILM ────────────────────────────────────────────────────── -->
+<section class="featured reveal" aria-label="Featured episode">
+  <div class="featured__inner">
+    <div class="featured__image-wrap">
+      <img src="assets/portrait-mascot-v2.jpg" alt="I Attract Miracles podcast seal — Ivo Betke with science iconography"/>
+      <div class="featured__image-caption" aria-hidden="true">
+        <span>Ep. 01</span><span>Season One</span>
+      </div>
+    </div>
+    <div>
+      <p class="featured__eyebrow">Ep. 01 · The Sovereign Stack · Season One</p>
+      <h2 class="featured__title">Carolina Aguilar listens to a brain learning.</h2>
+      <p class="featured__desc">INBRAIN's graphene mesh reads neurons at 1024 channels per square millimeter — and writes back. We send a dispatch from a 2040 where chronic pain is a knob you turn down.</p>
+      <div class="featured__actions">
+        <a href="https://www.youtube.com/@iattractmiracles_com" target="_blank" rel="noopener" class="btn-play">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6,3 20,12 6,21"/></svg>
+          Watch on YouTube
+        </a>
+        <a href="https://open.spotify.com/show/iattractmiracles" target="_blank" rel="noopener" class="btn-shownotes">Listen on Spotify →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ACTS EXPLAINER ───────────────────────────────────────────────────── -->
+<section class="acts reveal" id="acts" aria-label="The 40-Minute Architecture">
+  <p class="eyebrow" style="margin-bottom: 22px;">The 40-Minute Architecture</p>
+  <h2 class="acts__heading">Three acts. One bridge across the Miracle Gap.</h2>
+  <div class="acts__grid">
+    <div class="acts__cell">
+      <div class="acts__cell-header">
+        <span class="acts__cell-name">The Origin</span>
+        <span class="acts__cell-time">10m</span>
+      </div>
+      <p class="acts__cell-desc">The inciting incident. The moment of curiosity that turned a scientist into an architect.</p>
+    </div>
+    <div class="acts__cell">
+      <div class="acts__cell-header">
+        <span class="acts__cell-name">The Mechanism</span>
+        <span class="acts__cell-time">10m</span>
+      </div>
+      <p class="acts__cell-desc">A precise teardown. How does the breakthrough actually work — channels, mechanisms, dates?</p>
+    </div>
+    <div class="acts__cell">
+      <div class="acts__cell-header">
+        <span class="acts__cell-name">The Dispatch</span>
+        <span class="acts__cell-time">20m</span>
+      </div>
+      <p class="acts__cell-desc">A guided lucid dream from 2040. The architect describes a day in the world their miracle has scaled into.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── EPISODES ─────────────────────────────────────────────────────────── -->
+<section class="episodes reveal" id="episodes" aria-label="All episodes">
+  <div class="episodes__header">
+    <h2 class="episodes__heading">All episodes</h2>
+    <span class="episodes__count">Season 01 · Coming 2026</span>
+  </div>
+
+  <a href="#" class="episode-row">
+    <div>
+      <div class="episode-row__num">Ep. 01</div>
+      <div class="episode-row__act">The Origin</div>
+    </div>
+    <div>
+      <h3 class="episode-row__title">Carolina Aguilar — Neural Sovereignty</h3>
+      <p class="episode-row__desc">CEO of INBRAIN Neuroelectronics. Graphene-based brain-computer interfaces that read and write neural signals — and a 2040 where chronic pain is a dial you turn down with a thought.</p>
+    </div>
+    <div class="episode-row__meta">
+      <div>~40 min</div>
+      <span>Coming 2026</span>
+    </div>
+  </a>
+
+  <a href="#" class="episode-row">
+    <div>
+      <div class="episode-row__num">Ep. 02</div>
+      <div class="episode-row__act">The Mechanism</div>
+    </div>
+    <div>
+      <h3 class="episode-row__title">Robert Riener — The End of Disability</h3>
+      <p class="episode-row__desc">Founder of MyoSwiss, ETH Zurich. Textile-based robotic muscles that slip under your clothes — and a 2035 where the word "disability" has been re-engineered out of existence.</p>
+    </div>
+    <div class="episode-row__meta">
+      <div>~40 min</div>
+      <span>Coming 2026</span>
+    </div>
+  </a>
+
+  <div class="coming-soon">
+    <p class="coming-soon__label">Season One · Recording in progress</p>
+    <p class="coming-soon__text">The next miracle is being recorded.</p>
+  </div>
+</section>
+
+<!-- ── TEAM ─────────────────────────────────────────────────────────────── -->
+<section class="team reveal" id="team" aria-label="The team">
+  <p class="eyebrow">The Team</p>
+  <div class="team__grid">
+    <div class="team__card">
+      <p class="team__role">Host</p>
+      <h3 class="team__name">Ivo Betke</h3>
+      <p class="team__bio">Operator-in-Residence and architect of the conversation. Ivo guides each guest from the rigor of their lab into the poetry of the future they're building. 10+ years bridging operational specificity and speculative ambition.</p>
+    </div>
+    <div class="team__card">
+      <p class="team__role">Executive Producer</p>
+      <h3 class="team__name">Nicolai Haas</h3>
+      <p class="team__bio">The architect behind the 40-minute journey. Nicolai shapes each episode into a structured narrative that moves from Origin to Mechanism to Dispatch — a boardroom-ready briefing from the future.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── DISPATCH / NEWSLETTER ────────────────────────────────────────────── -->
+<section class="dispatch reveal" id="dispatch" aria-label="Newsletter signup">
+  <div class="dispatch__inner">
+    <p class="dispatch__eyebrow">The Dispatch · Weekly</p>
+    <h2 class="dispatch__heading">A field report from <strong>2040</strong>, in your inbox.</h2>
+    <p class="dispatch__body">One short letter each Sunday. New episodes, footnotes from the Miracle-to-Mechanism Map, and the occasional dispatch from a future we're building toward.</p>
+    <form class="dispatch__form" onsubmit="handleSubscribe(event)" novalidate>
+      <input class="dispatch__input" type="email" id="dispatch-email" placeholder="you@somewhere.earth" autocomplete="email" required aria-label="Email address"/>
+      <button class="dispatch__submit" type="submit">Subscribe →</button>
+    </form>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <a href="/" class="wordmark" aria-label="I Attract Miracles">
+      <span class="wordmark__script">I Attract</span>
+      <span class="wordmark__serif">Miracles</span>
     </a>
-
-    <div class="coming-soon reveal">
-      <p class="cs-label">Next Recording · March 26, 2026</p>
-      <p>The next miracle is being recorded.</p>
-    </div>
-
+    <ul class="site-footer__links">
+      <li>
+        <a href="https://www.youtube.com/@iattractmiracles_com" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.6 5.8a3 3 0 0 0 2.1 2.1C4.5 20.5 12 20.5 12 20.5s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          YouTube
+        </a>
+      </li>
+      <li>
+        <a href="https://open.spotify.com/show/iattractmiracles" target="_blank" rel="noopener" aria-label="Spotify">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          Spotify
+        </a>
+      </li>
+      <li>
+        <a href="https://podcasts.apple.com/podcast/i-attract-miracles" target="_blank" rel="noopener" aria-label="Apple Podcasts">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.002 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm.003 4.38c2.07 0 3.82.6 5.07 1.77 1.05.99 1.68 2.31 1.68 3.69 0 2.49-1.44 4.44-3.69 5.31.09.36.18.72.24 1.11.09.51.12 1.02.12 1.56 0 .36-.03.69-.06 1.02-.06.57-.51.99-1.08.99-.3 0-.57-.12-.78-.3-.18-.18-.3-.42-.3-.69v-.06c.03-.24.06-.51.06-.78 0-.36-.03-.72-.09-1.08-.09-.51-.24-1.02-.45-1.5a5.73 5.73 0 0 1-1.71.27c-3.12 0-5.55-2.46-5.55-5.55 0-3.12 2.43-5.55 5.55-5.55zm0 1.68c-2.19 0-3.87 1.68-3.87 3.87s1.68 3.87 3.87 3.87 3.87-1.68 3.87-3.87-1.68-3.87-3.87-3.87zm0 1.53c1.29 0 2.34 1.05 2.34 2.34S13.29 12.27 12 12.27s-2.34-1.05-2.34-2.34S10.71 7.59 12.003 7.59z"/></svg>
+          Apple Podcasts
+        </a>
+      </li>
+      <li>
+        <a href="https://instagram.com/iattractmiracles_com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          Instagram
+        </a>
+      </li>
+      <li>
+        <a href="https://tiktok.com/@iattractmiracles_com" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          TikTok
+        </a>
+      </li>
+    </ul>
   </div>
-</section>
 
-<div class="divider"></div>
-
-<!-- ── FORMAT ── -->
-<section class="reveal">
-  <p class="section-label">The Architecture</p>
-  <div class="format-grid">
-    <div class="format-block">
-      <div class="fmt-time">10'</div>
-      <h3 class="fmt-title">The Origin</h3>
-      <p class="fmt-desc">The inciting incident. The moment of curiosity that turned a scientist into a founder.</p>
-    </div>
-    <div class="format-block">
-      <div class="fmt-time">10'</div>
-      <h3 class="fmt-title">The Mechanism</h3>
-      <p class="fmt-desc">A deep dive into the tech. How does it break the laws of the status quo?</p>
-    </div>
-    <div class="format-block">
-      <div class="fmt-time">20'</div>
-      <h3 class="fmt-title">The Dispatch</h3>
-      <p class="fmt-desc">We send a dispatch from the future. A guided speculation — the guest describes a day in the world where their miracle has scaled.</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── HOSTS ── -->
-<section class="reveal">
-  <p class="section-label">The Team</p>
-  <div class="host-grid">
-    <div class="host-card">
-      <p class="host-role">Host</p>
-      <h3 class="host-name">Ivo Betke</h3>
-      <p class="host-bio">The interviewer who turns scientists into storytellers. Ivo guides each guest from the rigor of their lab into the poetry of the future they're building.</p>
-    </div>
-    <div class="host-card">
-      <p class="host-role">Executive Producer</p>
-      <h3 class="host-name">Nicolai Haas</h3>
-      <p class="host-bio">The architect behind the 40-minute journey. Nicolai shapes each episode into a structured narrative that moves from origin to speculation.</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">I Attract Miracles</div>
-
-    <div class="social-links">
-      <a href="https://www.youtube.com/@iattractmiracles_com" target="_blank" class="social-link">
-        <svg class="social-icon" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.6 5.8a3 3 0 0 0 2.1 2.1C4.5 20.5 12 20.5 12 20.5s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
-        YouTube
-      </a>
-      <a href="https://open.spotify.com/show/iattractmiracles" target="_blank" class="social-link">
-        <svg class="social-icon" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        Spotify
-      </a>
-      <a href="https://podcasts.apple.com/podcast/i-attract-miracles" target="_blank" class="social-link">
-        <svg class="social-icon" viewBox="0 0 24 24"><path d="M12.002 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm.003 4.38c2.07 0 3.82.6 5.07 1.77 1.05.99 1.68 2.31 1.68 3.69 0 2.49-1.44 4.44-3.69 5.31.09.36.18.72.24 1.11.09.51.12 1.02.12 1.56 0 .36-.03.69-.06 1.02-.06.57-.51.99-1.08.99-.3 0-.57-.12-.78-.3-.18-.18-.3-.42-.3-.69v-.06c.03-.24.06-.51.06-.78 0-.36-.03-.72-.09-1.08-.09-.51-.24-1.02-.45-1.5a5.73 5.73 0 0 1-1.71.27c-3.12 0-5.55-2.46-5.55-5.55 0-3.12 2.43-5.55 5.55-5.55zm0 1.68c-2.19 0-3.87 1.68-3.87 3.87s1.68 3.87 3.87 3.87 3.87-1.68 3.87-3.87-1.68-3.87-3.87-3.87zm0 1.53c1.29 0 2.34 1.05 2.34 2.34S13.29 12.27 12 12.27s-2.34-1.05-2.34-2.34S10.71 7.59 12.003 7.59z"/></svg>
-        Apple Podcasts
-      </a>
-      <a href="https://instagram.com/iattractmiracles_com" target="_blank" class="social-link">
-        <svg class="social-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        Instagram
-      </a>
-      <a href="https://tiktok.com/@iattractmiracles_com" target="_blank" class="social-link">
-        <svg class="social-icon" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-        TikTok
-      </a>
-    </div>
-
-    <p class="footer-quote">"Any sufficiently advanced technology is indistinguishable from magic."<br>— Arthur C. Clarke</p>
-
-    <div class="footer-legal">
-      © 2026 I Attract Miracles &nbsp;·&nbsp; iattractmiracles.com
-      &nbsp;·&nbsp; <a href="/imprint.html">Impressum</a>
-      &nbsp;·&nbsp; <a href="/privacy.html">Datenschutz</a>
+  <div class="site-footer__legal">
+    <span>© 2026 I Attract Miracles · Hosted by Ivo Betke · Produced by Nicolai Haas</span>
+    <div class="site-footer__legal-links">
+      <a href="/imprint.html">Impressum</a>
+      <a href="/privacy.html">Datenschutz</a>
     </div>
   </div>
 </footer>
 
 <script>
-  // Cursor glow
-  const glow = document.getElementById('cursorGlow');
-  document.addEventListener('mousemove', e => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top  = e.clientY + 'px';
-  });
-
-  // Floating particles
-  const container = document.getElementById('particles');
-  for (let i = 0; i < 18; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = Math.random() * 2.5 + 0.5;
-    p.style.cssText = `
-      width:${size}px; height:${size}px;
-      left:${Math.random()*100}%;
-      top:${Math.random()*80+10}%;
-      --dur:${10 + Math.random()*12}s;
-      --delay:${Math.random()*8}s;
-      --op:${0.2 + Math.random()*0.5};
-    `;
-    container.appendChild(p);
-  }
-
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver(entries => {
@@ -787,8 +988,22 @@
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
   reveals.forEach(r => io.observe(r));
+
+  // Newsletter
+  function handleSubscribe(e) {
+    e.preventDefault();
+    const input = document.getElementById('dispatch-email');
+    if (!input.value) return;
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Subscribed ✓';
+    btn.style.color = 'var(--iam-deep-navy)';
+    input.value = '';
+    input.disabled = true;
+    btn.disabled = true;
+  }
 </script>
+
 </body>
 </html>
