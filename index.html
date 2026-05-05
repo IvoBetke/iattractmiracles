@@ -619,37 +619,6 @@
       margin: 0 auto 32px;
       line-height: 1.65;
     }
-    .dispatch__form {
-      display: flex;
-      gap: 0;
-      max-width: 480px;
-      margin: 0 auto;
-      border-bottom: 1px solid var(--iam-deep-navy);
-    }
-    .dispatch__input {
-      flex: 1;
-      border: 0;
-      background: transparent;
-      padding: 14px 0;
-      font-family: var(--ff-body);
-      font-size: 16px;
-      outline: none;
-      color: var(--iam-deep-navy);
-    }
-    .dispatch__input::placeholder { color: var(--iam-fg-3); }
-    .dispatch__submit {
-      background: transparent;
-      border: 0;
-      cursor: pointer;
-      font-family: var(--ff-mono);
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--iam-vivid-blue);
-      transition: color var(--dur-base) var(--ease-out);
-      padding: 0;
-    }
-    .dispatch__submit:hover { color: var(--iam-deep-navy); }
 
     /* ── FOOTER ─────────────────────────────────────────────────────────── */
     .site-footer {
@@ -921,10 +890,7 @@
     <p class="dispatch__eyebrow">The Dispatch · Weekly</p>
     <h2 class="dispatch__heading">A field report from <strong>2040</strong>, in your inbox.</h2>
     <p class="dispatch__body">One short letter each Sunday. New episodes, footnotes from the Miracle-to-Mechanism Map, and the occasional dispatch from a future we're building toward.</p>
-    <form class="dispatch__form" onsubmit="handleSubscribe(event)" novalidate>
-      <input class="dispatch__input" type="email" id="dispatch-email" placeholder="you@somewhere.earth" autocomplete="email" required aria-label="Email address"/>
-      <button class="dispatch__submit" type="submit">Subscribe →</button>
-    </form>
+    <iframe src="https://insidious-tip-1d7.notion.site/ebd//357be750526280b5af2ede7e5ba3fd32" width="100%" height="600" frameborder="0" allowfullscreen style="display:block; margin-top:32px; border:0;"></iframe>
   </div>
 </section>
 
@@ -991,18 +957,6 @@
   }, { threshold: 0.08 });
   reveals.forEach(r => io.observe(r));
 
-  // Newsletter
-  function handleSubscribe(e) {
-    e.preventDefault();
-    const input = document.getElementById('dispatch-email');
-    if (!input.value) return;
-    const btn = e.target.querySelector('button');
-    btn.textContent = 'Subscribed ✓';
-    btn.style.color = 'var(--iam-deep-navy)';
-    input.value = '';
-    input.disabled = true;
-    btn.disabled = true;
-  }
 </script>
 
 </body>
