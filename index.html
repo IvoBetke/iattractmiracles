@@ -523,6 +523,31 @@
     .episode-row__meta span { display: block; margin-top: 6px; }
 
     /* ── COMING SOON ────────────────────────────────────────────────────── */
+    .episodes__release-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--iam-vivid-blue);
+      padding: 14px 0 20px;
+      border-bottom: 1px solid var(--iam-border);
+    }
+    .episodes__release-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--iam-vivid-blue);
+      flex-shrink: 0;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
     .coming-soon {
       padding: 48px 32px;
       border: 1px solid var(--iam-border);
@@ -810,7 +835,7 @@
         <span class="acts__cell-name">The Dispatch</span>
         <span class="acts__cell-time">20m</span>
       </div>
-      <p class="acts__cell-desc">A guided lucid dream from 2040. The architect describes a day in the world their miracle has scaled into.</p>
+      <p class="acts__cell-desc">A scientific speculation from 2040. The architect describes a day in the world their miracle has scaled into.</p>
     </div>
   </div>
 </section>
@@ -819,43 +844,74 @@
 <section class="episodes reveal" id="episodes" aria-label="All episodes">
   <div class="episodes__header">
     <h2 class="episodes__heading">All episodes</h2>
-    <span class="episodes__count">Season 01 · Coming 2026</span>
+    <span class="episodes__count">Season 01 · The Sovereign Stack</span>
+  </div>
+
+  <div class="episodes__release-banner">
+    <span class="episodes__release-dot"></span>
+    Dropping early June 2026
   </div>
 
   <a href="#" class="episode-row">
     <div>
       <div class="episode-row__num">Ep. 01</div>
-      <div class="episode-row__act">The Origin</div>
+      <div class="episode-row__act">Verifiable AI</div>
     </div>
     <div>
-      <h3 class="episode-row__title">Carolina Aguilar — Neural Sovereignty</h3>
-      <p class="episode-row__desc">CEO of INBRAIN Neuroelectronics. Graphene-based brain-computer interfaces that read and write neural signals — and a 2040 where chronic pain is a dial you turn down with a thought.</p>
+      <h3 class="episode-row__title">Jason Morton — Proof that the AI ran honestly.</h3>
+      <p class="episode-row__desc">CEO of EZKL. Zero-knowledge machine learning that lets any third party verify an AI model ran correctly on specific data — without seeing the model's weights or the inputs. A 2035 where "the algorithm said so" comes with a cryptographic receipt.</p>
     </div>
     <div class="episode-row__meta">
       <div>~40 min</div>
-      <span>Coming 2026</span>
+      <span>June 2026</span>
     </div>
   </a>
 
   <a href="#" class="episode-row">
     <div>
       <div class="episode-row__num">Ep. 02</div>
-      <div class="episode-row__act">The Mechanism</div>
+      <div class="episode-row__act">Orbital Compute</div>
     </div>
     <div>
-      <h3 class="episode-row__title">Robert Riener — The End of Disability</h3>
-      <p class="episode-row__desc">Founder of MyoSwiss, ETH Zurich. Textile-based robotic muscles that slip under your clothes — and a 2035 where the word "disability" has been re-engineered out of existence.</p>
+      <h3 class="episode-row__title">Filip Rezabek — The root of trust leaves the planet.</h3>
+      <p class="episode-row__desc">Co-founder of SpaceComputer. A satellite in low Earth orbit is a computer no one can reach to tamper with. SpaceComputer relocates the hardware security root to orbit — where physical inaccessibility becomes the security model.</p>
     </div>
     <div class="episode-row__meta">
       <div>~40 min</div>
-      <span>Coming 2026</span>
+      <span>June 2026</span>
     </div>
   </a>
 
-  <div class="coming-soon">
-    <p class="coming-soon__label">Season One · Recording in progress</p>
-    <p class="coming-soon__text">The next miracle is being recorded.</p>
-  </div>
+  <a href="#" class="episode-row">
+    <div>
+      <div class="episode-row__num">Ep. 03</div>
+      <div class="episode-row__act">Quantum Computing</div>
+    </div>
+    <div>
+      <h3 class="episode-row__title">Enrique Solano — Useful quantum, on today's hardware.</h3>
+      <p class="episode-row__desc">CEO of Kipu Quantum. Algorithms compressed to run on noisy, error-prone quantum processors — making practical quantum computation available a decade before the hardware is ready. A 2040 where quantum advantage is already invisible infrastructure.</p>
+    </div>
+    <div class="episode-row__meta">
+      <div>~40 min</div>
+      <span>June 2026</span>
+    </div>
+  </a>
+
+  <a href="#" class="episode-row">
+    <div>
+      <div class="episode-row__num">Ep. 04</div>
+      <div class="episode-row__act">Energy & Batteries</div>
+    </div>
+    <div>
+      <h3 class="episode-row__title">Prof. Dr. Philipp Adelhelm — The battery that ends scarcity.</h3>
+      <p class="episode-row__desc">Professor of Physical Chemistry, Humboldt University Berlin. Sodium-ion batteries with Prussian blue electrodes — built from abundant, cheap materials, without lithium or cobalt. The energy storage breakthrough that makes the transition democratically available.</p>
+    </div>
+    <div class="episode-row__meta">
+      <div>~40 min</div>
+      <span>June 2026</span>
+    </div>
+  </a>
+
 </section>
 
 <!-- ── TEAM ─────────────────────────────────────────────────────────────── -->
