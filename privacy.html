@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Datenschutzerklärung — I Attract Miracles</title>
+  <title>Privacy Policy — I Attract Miracles</title>
   <style>
     @font-face {
       font-family: "Cinzel";
@@ -53,159 +53,40 @@
     html { scroll-behavior: smooth; }
     body { background: var(--iam-light); color: var(--iam-deep-navy); font-family: var(--ff-body); min-height: 100vh; }
 
-    /* ── HEADER ── */
-    .site-header {
-      border-bottom: 1px solid var(--iam-border);
-      padding: 20px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    .site-header { border-bottom: 1px solid var(--iam-border); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
     .wordmark { display: inline-block; text-decoration: none; line-height: 1; }
     .wordmark__script { display: block; font-family: var(--ff-script); font-style: italic; font-size: 22px; color: var(--iam-vivid-blue); margin-bottom: -2px; }
-    .wordmark__serif  { display: block; font-family: var(--ff-display); font-weight: 800; font-size: 22px; color: var(--iam-deep-navy); letter-spacing: 0.08em; text-transform: uppercase; }
-    .back-link {
-      font-family: var(--ff-mono);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--iam-fg-3);
-      text-decoration: none;
-      transition: color 200ms var(--ease-out);
-    }
+    .wordmark__serif  { display: block; font-family: var(--ff-display); font-weight: 500; font-size: 22px; color: var(--iam-deep-navy); letter-spacing: 0.08em; text-transform: uppercase; }
+    .back-link { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--iam-fg-3); text-decoration: none; transition: color 200ms var(--ease-out); }
     .back-link:hover { color: var(--iam-deep-navy); }
 
-    /* ── CONTENT ── */
     .page-wrap { max-width: 760px; margin: 0 auto; padding: 64px 32px 96px; }
-    .page-eyebrow {
-      font-family: var(--ff-mono);
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--iam-fg-3);
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-family: var(--ff-editorial);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.1;
-      color: var(--iam-deep-navy);
-      margin-bottom: 8px;
-    }
-    .page-intro {
-      font-family: var(--ff-body);
-      font-size: 15px;
-      color: var(--iam-fg-3);
-      margin-bottom: 40px;
-    }
+    .page-eyebrow { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--iam-fg-3); margin-bottom: 20px; }
+    h1 { font-family: var(--ff-editorial); font-style: italic; font-weight: 400; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; color: var(--iam-deep-navy); margin-bottom: 8px; }
+    .page-intro { font-family: var(--ff-body); font-size: 15px; color: var(--iam-fg-3); margin-bottom: 40px; }
 
-    /* TOC */
-    .toc {
-      border: 1px solid var(--iam-border);
-      background: var(--iam-light-50);
-      padding: 24px 28px;
-      margin-bottom: 48px;
-    }
-    .toc-label {
-      font-family: var(--ff-mono);
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--iam-fg-3);
-      margin-bottom: 14px;
-    }
+    .toc { border: 1px solid var(--iam-border); background: var(--iam-light-50); padding: 24px 28px; margin-bottom: 48px; }
+    .toc-label { font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--iam-fg-3); margin-bottom: 14px; }
     .toc ol { list-style: none; counter-reset: toc; padding: 0; }
-    .toc ol li {
-      counter-increment: toc;
-      font-family: var(--ff-body);
-      font-size: 14px;
-      color: var(--iam-anthracite);
-      padding: 4px 0;
-    }
-    .toc ol li::before {
-      content: counter(toc, decimal-leading-zero) '. ';
-      font-family: var(--ff-mono);
-      font-size: 11px;
-      color: var(--iam-fg-3);
-      margin-right: 8px;
-    }
+    .toc ol li { counter-increment: toc; font-family: var(--ff-body); font-size: 14px; color: var(--iam-anthracite); padding: 4px 0; }
+    .toc ol li::before { content: counter(toc, decimal-leading-zero) '. '; font-family: var(--ff-mono); font-size: 11px; color: var(--iam-fg-3); margin-right: 8px; }
 
     .legal-block { margin-bottom: 40px; }
-    h2 {
-      font-family: var(--ff-display);
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--iam-deep-navy);
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--iam-border);
-    }
-    h3 {
-      font-family: var(--ff-editorial);
-      font-weight: 600;
-      font-size: 17px;
-      color: var(--iam-deep-navy);
-      margin-top: 22px;
-      margin-bottom: 8px;
-    }
-    .legal-block p, .legal-block address {
-      font-family: var(--ff-body);
-      font-size: 15px;
-      font-style: normal;
-      line-height: 1.8;
-      color: var(--iam-anthracite);
-    }
+    h2 { font-family: var(--ff-display); font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--iam-deep-navy); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--iam-border); }
+    h3 { font-family: var(--ff-editorial); font-weight: 600; font-size: 17px; color: var(--iam-deep-navy); margin-top: 22px; margin-bottom: 8px; }
+    .legal-block p, .legal-block address { font-family: var(--ff-body); font-size: 15px; font-style: normal; line-height: 1.8; color: var(--iam-anthracite); }
     .legal-block p + p { margin-top: 12px; }
     .highlight { color: var(--iam-deep-navy); font-weight: 600; }
     .legal-block ul { list-style: none; padding: 0; margin-top: 12px; }
-    .legal-block ul li {
-      font-family: var(--ff-body);
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--iam-anthracite);
-      padding-left: 20px;
-      position: relative;
-    }
+    .legal-block ul li { font-family: var(--ff-body); font-size: 15px; line-height: 1.8; color: var(--iam-anthracite); padding-left: 20px; position: relative; }
     .legal-block ul li::before { content: '·'; position: absolute; left: 0; color: var(--iam-fg-3); }
     .legal-block ul li + li { margin-top: 4px; }
-    .email-link {
-      color: var(--iam-vivid-blue);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: inherit;
-      background: none;
-      border: none;
-      padding: 0;
-    }
+    .email-link { color: var(--iam-vivid-blue); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; cursor: pointer; font-family: inherit; font-size: inherit; background: none; border: none; padding: 0; }
     .email-link:hover { color: var(--iam-deep-navy); }
-    .disclaimer-box {
-      border: 1px solid var(--iam-border);
-      background: var(--iam-light-50);
-      padding: 24px 28px;
-      margin-top: 12px;
-    }
+    .disclaimer-box { border: 1px solid var(--iam-border); background: var(--iam-light-50); padding: 24px 28px; margin-top: 12px; }
     .disclaimer-box p { font-size: 14px; }
 
-    /* ── FOOTER ── */
-    .site-footer {
-      border-top: 1px solid var(--iam-border);
-      padding: 28px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--ff-mono);
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--iam-fg-3);
-    }
+    .site-footer { border-top: 1px solid var(--iam-border); padding: 28px 32px; display: flex; justify-content: space-between; align-items: center; font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--iam-fg-3); }
     .site-footer a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--iam-border); }
     .site-footer a:hover { color: var(--iam-deep-navy); }
     .footer-links { display: flex; gap: 16px; }
@@ -219,143 +100,145 @@
 <body>
 
 <header class="site-header">
-  <a href="/" class="wordmark" aria-label="I Attract Miracles — Startseite">
+  <a href="/" class="wordmark" aria-label="I Attract Miracles — Home">
     <span class="wordmark__script">I Attract</span>
     <span class="wordmark__serif">Miracles</span>
   </a>
-  <a href="/" class="back-link">← Startseite</a>
+  <a href="/" class="back-link">← Home</a>
 </header>
 
 <main class="page-wrap">
 
-  <p class="page-eyebrow">Rechtliches</p>
-  <h1>Datenschutz­erklärung</h1>
-  <p class="page-intro">Stand: März 2026 · Gemäß DSGVO, BDSG und TMG</p>
+  <p class="page-eyebrow">Legal</p>
+  <h1>Privacy Policy</h1>
+  <p class="page-intro">Last updated: May 2026 · In accordance with GDPR</p>
 
   <div class="toc">
-    <p class="toc-label">Inhaltsverzeichnis</p>
+    <p class="toc-label">Contents</p>
     <ol>
-      <li>Verantwortlicher</li>
-      <li>Erhebung und Verarbeitung personenbezogener Daten</li>
+      <li>Data Controller</li>
+      <li>Data We Collect</li>
       <li>Hosting (GitHub Pages)</li>
-      <li>Cookies und lokale Speicherung</li>
+      <li>Cookies and Local Storage</li>
       <li>Google Fonts</li>
-      <li>Externe Plattformen (YouTube, Spotify, Apple Podcasts)</li>
-      <li>Soziale Netzwerke (Instagram, TikTok)</li>
-      <li>Kontaktaufnahme per E-Mail</li>
-      <li>Rechtsgrundlagen der Verarbeitung</li>
-      <li>Ihre Rechte als betroffene Person</li>
-      <li>Datensicherheit</li>
-      <li>Aktualität dieser Datenschutzerklärung</li>
+      <li>External Platforms (YouTube, Spotify, Apple Podcasts)</li>
+      <li>Social Networks (Instagram, TikTok)</li>
+      <li>Contact by Email</li>
+      <li>Legal Bases for Processing</li>
+      <li>Your Rights</li>
+      <li>Data Security</li>
+      <li>Updates to This Policy</li>
     </ol>
   </div>
 
   <div class="legal-block">
-    <h2>01 — Verantwortlicher</h2>
-    <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und sonstiger nationaler Datenschutzgesetze sowie anderer datenschutzrechtlicher Bestimmungen ist:</p>
+    <h2>01 — Data Controller</h2>
+    <p>The controller responsible for the processing of personal data on this website within the meaning of the General Data Protection Regulation (GDPR) is:</p>
     <address style="margin-top:16px;">
-      <span class="highlight">Ivo Betke</span><br>
-      Richardstraße 105<br>
-      12043 Berlin<br>
-      Deutschland<br><br>
-      E-Mail: <button class="email-link" id="email-display" onclick="revealEmail()" aria-label="E-Mail-Adresse anzeigen">[Klicken zum Anzeigen]</button>
+      <span class="highlight">High Five Group, s.r.o.</span><br>
+      Naskové 1189/1<br>
+      150 00 Prague<br>
+      Czech Republic<br><br>
+      VAT ID: CZ17106702<br>
+      Tax ID: 17106702<br><br>
+      Email: <button class="email-link" id="email-display" onclick="revealEmail()" aria-label="Show email address">[Click to reveal]</button>
     </address>
   </div>
 
   <div class="legal-block">
-    <h2>02 — Erhebung und Verarbeitung personenbezogener Daten</h2>
-    <p>Diese Website ist eine statische Informationsseite. Sie erhebt selbst keine personenbezogenen Daten aktiv. Beim Aufruf der Website werden jedoch automatisch durch den Hosting-Anbieter (GitHub Pages) serverseitig bestimmte technische Informationen erfasst und in Server-Logfiles gespeichert:</p>
+    <h2>02 — Data We Collect</h2>
+    <p>This website is a static information site and does not actively collect personal data itself. When you visit the site, the hosting provider (GitHub Pages) automatically records certain technical information in server log files:</p>
     <ul>
-      <li>IP-Adresse des anfragenden Rechners (anonymisiert oder vollständig)</li>
-      <li>Datum und Uhrzeit des Zugriffs</li>
-      <li>Name und URL der abgerufenen Datei</li>
-      <li>Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
-      <li>Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners</li>
-      <li>Name Ihres Access-Providers</li>
+      <li>IP address of the requesting device (anonymised or full)</li>
+      <li>Date and time of access</li>
+      <li>Name and URL of the file accessed</li>
+      <li>Referrer URL (website you came from)</li>
+      <li>Browser type and, where applicable, operating system</li>
+      <li>Name of your internet service provider</li>
     </ul>
-    <p>Diese Daten werden zur Sicherstellung eines reibungslosen Verbindungsaufbaus sowie zur Systemsicherheit verarbeitet. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.</p>
+    <p>This data is processed to ensure a smooth connection and system security. It is not merged with other data sources.</p>
   </div>
 
   <div class="legal-block">
     <h2>03 — Hosting (GitHub Pages)</h2>
-    <p>Diese Website wird über <span class="highlight">GitHub Pages</span> gehostet, einen Dienst der GitHub, Inc. (88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) bzw. der GitHub B.V. für europäische Nutzer.</p>
-    <p>Beim Besuch dieser Website verarbeitet GitHub technische Verbindungsdaten (insbesondere IP-Adresse) im Rahmen des Hostings. GitHub, Inc. ist im Rahmen des EU-US Data Privacy Framework zertifiziert. Weitere Informationen finden Sie in der Datenschutzerklärung von GitHub unter https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement.</p>
-    <p>Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und effizienten Betrieb der Website).</p>
+    <p>This website is hosted via <span class="highlight">GitHub Pages</span>, a service of GitHub, Inc. (88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) and GitHub B.V. for European users.</p>
+    <p>When you visit this site, GitHub processes technical connection data (including IP address) as part of the hosting service. GitHub, Inc. is certified under the EU–US Data Privacy Framework. For more information, see GitHub's privacy statement at https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement.</p>
+    <p>The legal basis for this processing is Art. 6(1)(f) GDPR (legitimate interest in the secure and efficient operation of the website).</p>
   </div>
 
   <div class="legal-block">
-    <h2>04 — Cookies und lokale Speicherung</h2>
+    <h2>04 — Cookies and Local Storage</h2>
     <div class="disclaimer-box">
-      <p>Diese Website setzt <span class="highlight">keine eigenen Cookies</span> ein und nutzt keine lokalen Speichermechanismen (localStorage, sessionStorage) für Trackingzwecke. Es werden keine Nutzerprofile erstellt und kein Tracking-Code eingebunden.</p>
-      <p>Externe Dienste (z. B. eingebettete Videos oder Plattform-Links), auf die verwiesen wird, können im Rahmen ihrer eigenen Nutzungsbedingungen Cookies setzen, wenn Sie diese Dienste direkt aufrufen. Dies unterliegt der jeweiligen Datenschutzerklärung des Drittanbieters.</p>
+      <p>This website does <span class="highlight">not use any cookies</span> and does not use local storage mechanisms (localStorage, sessionStorage) for tracking purposes. No user profiles are created and no tracking code is embedded.</p>
+      <p>External services linked to from this site may set their own cookies if you choose to visit them directly. This is governed by each platform's own privacy policy.</p>
     </div>
   </div>
 
   <div class="legal-block">
     <h2>05 — Google Fonts</h2>
-    <p>Diese Website bindet Schriftarten des Dienstes <span class="highlight">Google Fonts</span> (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) ein. Die Schriftarten werden beim Aufruf der Seite direkt von Google-Servern geladen. Dabei wird Ihre IP-Adresse an Google übermittelt.</p>
-    <p>Google LLC ist im Rahmen des EU-US Data Privacy Framework zertifiziert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen finden Sie unter https://policies.google.com/privacy.</p>
+    <p>This website loads the typeface <span class="highlight">IBM Plex Mono</span> from Google Fonts (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). When the page loads, your IP address is transmitted to Google's servers.</p>
+    <p>Google LLC is certified under the EU–US Data Privacy Framework. The legal basis is Art. 6(1)(f) GDPR (legitimate interest in consistent typographic rendering). For more information, see https://policies.google.com/privacy.</p>
   </div>
 
   <div class="legal-block">
-    <h2>06 — Externe Plattformen</h2>
-    <p>Diese Website enthält Links zu externen Streaming- und Podcast-Plattformen. Es handelt sich um reine Verlinkungen — Inhalte sind nicht direkt eingebettet. Wenn Sie einen dieser Links anklicken, verlassen Sie diese Website und gelangen auf die jeweilige Plattform:</p>
+    <h2>06 — External Platforms</h2>
+    <p>This website contains links to external streaming and podcast platforms. These are plain links only — no content is embedded. Clicking a link takes you away from this site to the respective platform.</p>
     <h3>YouTube (Google LLC)</h3>
-    <p>Betreiber: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Datenschutz: https://policies.google.com/privacy</p>
+    <p>Operator: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Privacy policy: https://policies.google.com/privacy</p>
     <h3>Spotify</h3>
-    <p>Betreiber: Spotify AB, Regeringsgatan 19, SE-111 53 Stockholm, Schweden. Datenschutz: https://www.spotify.com/de/legal/privacy-policy/</p>
+    <p>Operator: Spotify AB, Regeringsgatan 19, SE-111 53 Stockholm, Sweden. Privacy policy: https://www.spotify.com/legal/privacy-policy/</p>
     <h3>Apple Podcasts</h3>
-    <p>Betreiber: Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA. Datenschutz: https://www.apple.com/de/legal/privacy/</p>
-    <p>Für die Inhalte und Datenschutzpraktiken der verlinkten Plattformen sind ausschließlich deren Betreiber verantwortlich.</p>
+    <p>Operator: Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA. Privacy policy: https://www.apple.com/legal/privacy/</p>
+    <p>The respective platform operators are solely responsible for content and data practices on their platforms. We have no influence over their data processing.</p>
   </div>
 
   <div class="legal-block">
-    <h2>07 — Soziale Netzwerke</h2>
-    <p>Diese Website enthält Links zu sozialen Netzwerken. Es handelt sich ausschließlich um Verlinkungen — keine eingebetteten Tracking-Pixel oder Social-Plugins. Erst durch Anklicken der Links verlassen Sie diese Website.</p>
+    <h2>07 — Social Networks</h2>
+    <p>This website contains links to social networks. These are plain links only — no tracking pixels or social plugins are embedded. You only leave this site by actively clicking a link.</p>
     <h3>Instagram</h3>
-    <p>Betreiber: Meta Platforms Ireland Ltd., 4 Grand Canal Square, Dublin 2, Irland. Datenschutz: https://privacycenter.instagram.com/policy</p>
+    <p>Operator: Meta Platforms Ireland Ltd., 4 Grand Canal Square, Dublin 2, Ireland. Privacy policy: https://privacycenter.instagram.com/policy</p>
     <h3>TikTok</h3>
-    <p>Betreiber: TikTok Technology Limited, 10 Earlsfort Terrace, Dublin, D02 T380, Irland. Datenschutz: https://www.tiktok.com/de/legal/page/eea/privacy-policy</p>
-    <p>Bei Interaktion mit diesen Plattformen werden Daten von den jeweiligen Betreibern gemäß deren Datenschutzerklärungen verarbeitet.</p>
+    <p>Operator: TikTok Technology Limited, 10 Earlsfort Terrace, Dublin, D02 T380, Ireland. Privacy policy: https://www.tiktok.com/legal/page/eea/privacy-policy</p>
+    <p>When you interact with these platforms, data is processed by their respective operators in accordance with their privacy policies. We have no influence over this.</p>
   </div>
 
   <div class="legal-block">
-    <h2>08 — Kontaktaufnahme per E-Mail</h2>
-    <p>Wenn Sie uns per E-Mail kontaktieren, werden die von Ihnen übermittelten Daten (z. B. Name, E-Mail-Adresse, Nachrichteninhalt) zum Zweck der Bearbeitung Ihrer Anfrage verarbeitet und gespeichert. Diese Daten geben wir ohne Ihre Einwilligung nicht an Dritte weiter.</p>
-    <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO bzw. Art. 6 Abs. 1 lit. b DSGVO. Die Daten werden gelöscht, sobald ihre Speicherung für die Erreichung des Zwecks nicht mehr erforderlich ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+    <h2>08 — Contact by Email</h2>
+    <p>If you contact us by email, the data you provide (e.g. name, email address, message content) will be processed and stored for the purpose of handling your enquiry. We will not share this data with third parties without your consent.</p>
+    <p>Legal basis: Art. 6(1)(f) GDPR (legitimate interest in responding to enquiries), or Art. 6(1)(b) GDPR where the enquiry relates to a contract. Data is deleted once the purpose for storage no longer applies and no statutory retention obligations prevent deletion.</p>
   </div>
 
   <div class="legal-block">
-    <h2>09 — Rechtsgrundlagen der Verarbeitung</h2>
-    <p>Soweit wir für Verarbeitungsvorgänge personenbezogener Daten eine Einwilligung der betroffenen Person einholen, dient Art. 6 Abs. 1 lit. a DSGVO als Rechtsgrundlage. Bei der Verarbeitung personenbezogener Daten, die zur Erfüllung eines Vertrages erforderlich ist, dient Art. 6 Abs. 1 lit. b DSGVO als Rechtsgrundlage. Soweit eine Verarbeitung zur Wahrung eines berechtigten Interesses unseres Unternehmens oder eines Dritten erforderlich ist und die Interessen, Grundrechte und Grundfreiheiten des Betroffenen das erstgenannte Interesse nicht überwiegen, dient Art. 6 Abs. 1 lit. f DSGVO als Rechtsgrundlage.</p>
+    <h2>09 — Legal Bases for Processing</h2>
+    <p>Where we obtain consent for the processing of personal data, Art. 6(1)(a) GDPR serves as the legal basis. Where processing is necessary for the performance of a contract, Art. 6(1)(b) GDPR applies. Where processing is necessary to pursue a legitimate interest of ours or a third party, and that interest is not overridden by the data subject's interests or rights, Art. 6(1)(f) GDPR applies.</p>
   </div>
 
   <div class="legal-block">
-    <h2>10 — Ihre Rechte als betroffene Person</h2>
-    <p>Sie haben gegenüber dem Verantwortlichen folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:</p>
+    <h2>10 — Your Rights</h2>
+    <p>Under GDPR, you have the following rights with respect to your personal data:</p>
     <ul>
-      <li><span class="highlight">Auskunftsrecht</span> — Art. 15 DSGVO</li>
-      <li><span class="highlight">Recht auf Berichtigung</span> — Art. 16 DSGVO</li>
-      <li><span class="highlight">Recht auf Löschung</span> — Art. 17 DSGVO</li>
-      <li><span class="highlight">Recht auf Einschränkung der Verarbeitung</span> — Art. 18 DSGVO</li>
-      <li><span class="highlight">Recht auf Datenübertragbarkeit</span> — Art. 20 DSGVO</li>
-      <li><span class="highlight">Widerspruchsrecht</span> — Art. 21 DSGVO</li>
-      <li><span class="highlight">Beschwerderecht</span> bei der Berliner Beauftragten für Datenschutz und Informationsfreiheit</li>
+      <li><span class="highlight">Right of access</span> — Art. 15 GDPR</li>
+      <li><span class="highlight">Right to rectification</span> — Art. 16 GDPR</li>
+      <li><span class="highlight">Right to erasure</span> — Art. 17 GDPR</li>
+      <li><span class="highlight">Right to restriction of processing</span> — Art. 18 GDPR</li>
+      <li><span class="highlight">Right to data portability</span> — Art. 20 GDPR</li>
+      <li><span class="highlight">Right to object</span> — Art. 21 GDPR</li>
+      <li><span class="highlight">Right to lodge a complaint</span> with the Office for Personal Data Protection (ÚOOÚ), Czech Republic: https://www.uoou.cz</li>
     </ul>
-    <p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an den oben genannten Verantwortlichen.</p>
+    <p>To exercise your rights, please contact the data controller listed in Section 01.</p>
   </div>
 
   <div class="legal-block">
-    <h2>11 — Datensicherheit</h2>
+    <h2>11 — Data Security</h2>
     <div class="disclaimer-box">
-      <p>Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL-/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
-      <p>Wir treffen technische und organisatorische Sicherheitsmaßnahmen, um Ihre personenbezogenen Daten gegen zufällige oder vorsätzliche Manipulationen, teilweisen oder vollständigen Verlust, Zerstörung oder unbefugten Zugriff Dritter zu schützen.</p>
+      <p>This website uses SSL/TLS encryption to protect the transmission of data. You can identify an encrypted connection by the "https://" prefix in the browser address bar and the padlock icon.</p>
+      <p>We implement appropriate technical and organisational measures to protect your personal data against accidental or deliberate manipulation, partial or complete loss, destruction, or unauthorised access by third parties.</p>
     </div>
   </div>
 
   <div class="legal-block">
-    <h2>12 — Aktualität dieser Datenschutzerklärung</h2>
-    <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand März 2026. Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf dieser Seite abgerufen werden.</p>
+    <h2>12 — Updates to This Policy</h2>
+    <p>This privacy policy is current as of May 2026. As our website evolves or legal requirements change, we may need to update this policy. The current version is always available at this URL.</p>
   </div>
 
 </main>
@@ -363,8 +246,8 @@
 <footer class="site-footer">
   <span>© 2026 I Attract Miracles · iattractmiracles.com</span>
   <div class="footer-links">
-    <a href="/imprint.html">Impressum</a>
-    <a href="/privacy.html">Datenschutz</a>
+    <a href="/imprint.html">Legal Notice</a>
+    <a href="/privacy.html">Privacy Policy</a>
   </div>
 </footer>
 

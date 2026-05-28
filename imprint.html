@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Impressum — I Attract Miracles</title>
+  <title>Legal Notice — I Attract Miracles</title>
   <style>
     @font-face {
       font-family: "Cinzel";
@@ -54,7 +54,6 @@
     html { scroll-behavior: smooth; }
     body { background: var(--iam-light); color: var(--iam-deep-navy); font-family: var(--ff-body); min-height: 100vh; }
 
-    /* ── HEADER ── */
     .site-header {
       border-bottom: 1px solid var(--iam-border);
       padding: 20px 32px;
@@ -64,99 +63,29 @@
     }
     .wordmark { display: inline-block; text-decoration: none; line-height: 1; }
     .wordmark__script { display: block; font-family: var(--ff-script); font-style: italic; font-size: 22px; color: var(--iam-vivid-blue); margin-bottom: -2px; }
-    .wordmark__serif  { display: block; font-family: var(--ff-display); font-weight: 800; font-size: 22px; color: var(--iam-deep-navy); letter-spacing: 0.08em; text-transform: uppercase; }
+    .wordmark__serif  { display: block; font-family: var(--ff-display); font-weight: 500; font-size: 22px; color: var(--iam-deep-navy); letter-spacing: 0.08em; text-transform: uppercase; }
     .back-link {
-      font-family: var(--ff-mono);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--iam-fg-3);
-      text-decoration: none;
+      font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--iam-fg-3); text-decoration: none;
       transition: color 200ms var(--ease-out);
     }
     .back-link:hover { color: var(--iam-deep-navy); }
 
-    /* ── CONTENT ── */
     .page-wrap { max-width: 760px; margin: 0 auto; padding: 64px 32px 96px; }
-
-    .page-eyebrow {
-      font-family: var(--ff-mono);
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--iam-fg-3);
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-family: var(--ff-editorial);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.1;
-      color: var(--iam-deep-navy);
-      margin-bottom: 8px;
-    }
-    .page-intro {
-      font-family: var(--ff-body);
-      font-size: 15px;
-      color: var(--iam-fg-3);
-      margin-bottom: 56px;
-    }
+    .page-eyebrow { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--iam-fg-3); margin-bottom: 20px; }
+    h1 { font-family: var(--ff-editorial); font-style: italic; font-weight: 400; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; color: var(--iam-deep-navy); margin-bottom: 8px; }
+    .page-intro { font-family: var(--ff-body); font-size: 15px; color: var(--iam-fg-3); margin-bottom: 56px; }
     .legal-block { margin-bottom: 40px; }
-    h2 {
-      font-family: var(--ff-display);
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--iam-deep-navy);
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--iam-border);
-    }
-    .legal-block p, .legal-block address {
-      font-family: var(--ff-body);
-      font-size: 15px;
-      font-style: normal;
-      line-height: 1.8;
-      color: var(--iam-anthracite);
-    }
+    h2 { font-family: var(--ff-display); font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--iam-deep-navy); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--iam-border); }
+    .legal-block p, .legal-block address { font-family: var(--ff-body); font-size: 15px; font-style: normal; line-height: 1.8; color: var(--iam-anthracite); }
     .legal-block p + p { margin-top: 12px; }
     .highlight { color: var(--iam-deep-navy); font-weight: 600; }
-    .email-link {
-      color: var(--iam-vivid-blue);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: inherit;
-      background: none;
-      border: none;
-      padding: 0;
-    }
+    .email-link { color: var(--iam-vivid-blue); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; cursor: pointer; font-family: inherit; font-size: inherit; background: none; border: none; padding: 0; }
     .email-link:hover { color: var(--iam-deep-navy); }
-    .disclaimer-box {
-      border: 1px solid var(--iam-border);
-      background: var(--iam-light-50);
-      padding: 24px 28px;
-      margin-top: 12px;
-    }
+    .disclaimer-box { border: 1px solid var(--iam-border); background: var(--iam-light-50); padding: 24px 28px; margin-top: 12px; }
     .disclaimer-box p { font-size: 14px; }
 
-    /* ── FOOTER ── */
-    .site-footer {
-      border-top: 1px solid var(--iam-border);
-      padding: 28px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--ff-mono);
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--iam-fg-3);
-    }
+    .site-footer { border-top: 1px solid var(--iam-border); padding: 28px 32px; display: flex; justify-content: space-between; align-items: center; font-family: var(--ff-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--iam-fg-3); }
     .site-footer a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--iam-border); }
     .site-footer a:hover { color: var(--iam-deep-navy); }
     .footer-links { display: flex; gap: 16px; }
@@ -170,72 +99,75 @@
 <body>
 
 <header class="site-header">
-  <a href="/" class="wordmark" aria-label="I Attract Miracles — Startseite">
+  <a href="/" class="wordmark" aria-label="I Attract Miracles — Home">
     <span class="wordmark__script">I Attract</span>
     <span class="wordmark__serif">Miracles</span>
   </a>
-  <a href="/" class="back-link">← Startseite</a>
+  <a href="/" class="back-link">← Home</a>
 </header>
 
 <main class="page-wrap">
 
-  <p class="page-eyebrow">Rechtliches</p>
-  <h1>Impressum</h1>
-  <p class="page-intro">Angaben gemäß § 5 TMG</p>
+  <p class="page-eyebrow">Legal</p>
+  <h1>Legal Notice</h1>
+  <p class="page-intro">Company information and legal disclosure</p>
 
   <div class="legal-block">
-    <h2>Angaben gemäß § 5 TMG</h2>
+    <h2>Company Information</h2>
     <address>
-      <span class="highlight">Ivo Betke</span><br>
-      Richardstraße 105<br>
-      12043 Berlin<br>
-      Deutschland
+      <span class="highlight">High Five Group, s.r.o.</span><br>
+      Naskové 1189/1<br>
+      150 00 Prague<br>
+      Czech Republic<br><br>
+      VAT ID: CZ17106702<br>
+      Tax ID: 17106702
     </address>
   </div>
 
   <div class="legal-block">
-    <h2>Kontakt</h2>
-    <p>E-Mail: <button class="email-link" id="email-display" onclick="revealEmail()" aria-label="E-Mail-Adresse anzeigen">[Klicken zum Anzeigen]</button></p>
+    <h2>Contact</h2>
+    <p>Email: <button class="email-link" id="email-display" onclick="revealEmail()" aria-label="Show email address">[Click to reveal]</button></p>
   </div>
 
   <div class="legal-block">
-    <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 MStV</h2>
+    <h2>Editorial Responsibility</h2>
     <address>
       <span class="highlight">Ivo Betke</span><br>
-      Richardstraße 105<br>
-      12043 Berlin
+      Host & Creator, I Attract Miracles<br>
+      c/o High Five Group, s.r.o.<br>
+      Naskové 1189/1, 150 00 Prague
     </address>
   </div>
 
   <div class="legal-block">
-    <h2>Haftung für Inhalte</h2>
+    <h2>Liability for Content</h2>
     <div class="disclaimer-box">
-      <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
-      <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+      <p>The content on this website has been created with due care. However, we cannot guarantee the accuracy, completeness, or timeliness of the information provided. As a service provider, we are responsible for our own content on these pages in accordance with applicable law.</p>
+      <p>We are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under applicable law remain unaffected. Liability in this regard is only possible from the moment of knowledge of a specific infringement.</p>
     </div>
   </div>
 
   <div class="legal-block">
-    <h2>Haftung für Links</h2>
+    <h2>Liability for Links</h2>
     <div class="disclaimer-box">
-      <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
-      <p>Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+      <p>Our website contains links to external third-party websites over whose content we have no control. We therefore accept no liability for such external content. The respective provider or operator of the linked pages is always responsible for their content.</p>
+      <p>The linked pages were checked for possible legal violations at the time of linking. No illegal content was apparent at the time of linking. Permanent monitoring of the linked pages is not reasonable without specific evidence of a legal violation. Upon notification of such violations, we will remove such links immediately.</p>
     </div>
   </div>
 
   <div class="legal-block">
-    <h2>Urheberrecht</h2>
+    <h2>Copyright</h2>
     <div class="disclaimer-box">
-      <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
-      <p>Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+      <p>The content and works created by the site operator on these pages are subject to copyright law. Reproduction, editing, distribution, and any form of use beyond the limits of copyright law require the written consent of the respective author or creator.</p>
+      <p>Downloads and copies of this site are permitted for private, non-commercial use only. Where content on this site was not created by the operator, the copyrights of third parties are respected. Third-party content is identified as such. Should you become aware of a copyright infringement, please notify us. Upon becoming aware of such violations, we will remove the relevant content immediately.</p>
     </div>
   </div>
 
   <div class="legal-block">
-    <h2>Streitschlichtung</h2>
+    <h2>Dispute Resolution</h2>
     <div class="disclaimer-box">
-      <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr</p>
-      <p>Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und grundsätzlich nicht bereit.</p>
+      <p>The European Commission provides a platform for online dispute resolution (ODR): https://ec.europa.eu/consumers/odr</p>
+      <p>We are not obligated or willing to participate in dispute resolution proceedings before a consumer arbitration body.</p>
     </div>
   </div>
 
@@ -244,8 +176,8 @@
 <footer class="site-footer">
   <span>© 2026 I Attract Miracles · iattractmiracles.com</span>
   <div class="footer-links">
-    <a href="/imprint.html">Impressum</a>
-    <a href="/privacy.html">Datenschutz</a>
+    <a href="/imprint.html">Legal Notice</a>
+    <a href="/privacy.html">Privacy Policy</a>
   </div>
 </footer>
 
